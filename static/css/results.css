@@ -1,0 +1,321 @@
+/* Results Page Styling */
+.results {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    min-height: 100vh;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #3a8f2f, #2ecc71);
+    border-radius: 2px;
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    color: #6c757d;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.results-container {
+    background: white;
+    border-radius: 20px;
+    padding: 3rem;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    animation: slideInUp 0.8s ease-out;
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.results-summary {
+    margin-bottom: 3rem;
+}
+
+.summary-card {
+    background: linear-gradient(135deg, rgba(58, 143, 47, 0.1), rgba(46, 204, 113, 0.1));
+    border: 1px solid rgba(58, 143, 47, 0.2);
+    border-radius: 15px;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.summary-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #3a8f2f, #2ecc71);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.summary-icon i {
+    font-size: 1.5rem;
+    color: white;
+}
+
+.summary-content h4 {
+    color: #2c3e50;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.summary-content p {
+    color: #6c757d;
+    margin: 0;
+}
+
+.table-title {
+    color: #2c3e50;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.results-table-container {
+    margin-bottom: 3rem;
+}
+
+.table-responsive {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.results-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+.results-table thead {
+    background: linear-gradient(135deg, #3a8f2f, #2ecc71);
+}
+
+.results-table th {
+    color: white;
+    font-weight: 600;
+    padding: 1rem;
+    text-align: left;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.results-table td {
+    padding: 1rem;
+    border-bottom: 1px solid #e9ecef;
+    vertical-align: middle;
+}
+
+.results-table tbody tr:hover {
+    background: rgba(58, 143, 47, 0.05);
+}
+
+.test-data {
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    color: #495057;
+    max-width: 300px;
+    word-break: break-all;
+}
+
+.prediction {
+    font-weight: 600;
+    color: #2ecc71;
+    font-size: 1.1rem;
+}
+
+.confidence {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.confidence-bar {
+    width: 100px;
+    height: 8px;
+    background: #e9ecef;
+    border-radius: 4px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.confidence-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #3a8f2f, #2ecc71);
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+
+.confidence-text {
+    font-weight: 600;
+    color: #2c3e50;
+    font-size: 0.9rem;
+}
+
+.no-data {
+    text-align: center;
+    color: #6c757d;
+    font-style: italic;
+    padding: 2rem;
+}
+
+.results-actions {
+    border-top: 1px solid #e9ecef;
+    padding-top: 2rem;
+}
+
+.action-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 12px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.action-btn.primary {
+    background: linear-gradient(135deg, #3a8f2f, #2ecc71);
+    color: white;
+}
+
+.action-btn.primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(58, 143, 47, 0.3);
+    color: white;
+}
+
+.action-btn.secondary {
+    background: linear-gradient(135deg, #6c757d, #495057);
+    color: white;
+}
+
+.action-btn.secondary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(108, 117, 125, 0.3);
+    color: white;
+}
+
+.action-btn.outline {
+    background: transparent;
+    color: #3a8f2f;
+    border: 2px solid #3a8f2f;
+}
+
+.action-btn.outline:hover {
+    background: #3a8f2f;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(58, 143, 47, 0.3);
+}
+
+.action-btn i {
+    font-size: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .results {
+        padding: 40px 0;
+    }
+    
+    .results-container {
+        padding: 2rem 1.5rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .summary-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .results-table {
+        font-size: 0.9rem;
+    }
+    
+    .results-table th,
+    .results-table td {
+        padding: 0.75rem 0.5rem;
+    }
+    
+    .test-data {
+        max-width: 200px;
+        font-size: 0.8rem;
+    }
+    
+    .confidence {
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: flex-start;
+    }
+    
+    .confidence-bar {
+        width: 80px;
+    }
+    
+    .results-actions .row {
+        gap: 1rem;
+    }
+}
+
+/* Animation for table rows */
+.results-table tbody tr {
+    animation: fadeInRow 0.5s ease-out;
+}
+
+@keyframes fadeInRow {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.results-table tbody tr:nth-child(1) { animation-delay: 0.1s; }
+.results-table tbody tr:nth-child(2) { animation-delay: 0.2s; }
+.results-table tbody tr:nth-child(3) { animation-delay: 0.3s; }
+.results-table tbody tr:nth-child(4) { animation-delay: 0.4s; }
+.results-table tbody tr:nth-child(5) { animation-delay: 0.5s; }

@@ -1,0 +1,294 @@
+/* Graph Page Styling */
+.hero {
+    background: linear-gradient(135deg, rgba(58, 143, 47, 0.9), rgba(46, 204, 113, 0.8)), url(../img/background.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 120px 0 80px;
+    color: white;
+    text-align: center;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    animation: fadeInDown 1s ease-out;
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    font-weight: 300;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+    animation: fadeInUp 1s ease-out 0.3s both;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.models-section {
+    padding: 80px 0;
+    background: #f8f9fa;
+}
+
+.models-section:nth-child(even) {
+    background: white;
+}
+
+.section-header {
+    margin-bottom: 4rem;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #3a8f2f, #2ecc71);
+    border-radius: 2px;
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    color: #6c757d;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.graph-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.graph-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.graph-image-container {
+    position: relative;
+    height: 300px;
+    background: #f8f9fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border: 1px solid #e9ecef;
+}
+
+.graph-image {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    position: relative;
+    z-index: 1;
+}
+
+/* Zoom effect removed */
+
+/* Overlay and zoom button styles removed */
+
+.graph-content {
+    padding: 2rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.graph-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+
+.graph-description {
+    color: #6c757d;
+    line-height: 1.6;
+    margin: 0;
+    flex-grow: 1;
+}
+
+.back-section {
+    padding: 60px 0;
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+}
+
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, #3a8f2f, #2ecc71);
+    color: white;
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(58, 143, 47, 0.3);
+}
+
+.back-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(58, 143, 47, 0.4);
+    color: white;
+}
+
+.back-btn i {
+    font-size: 1rem;
+}
+
+/* Section Dividers */
+.models-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, #3a8f2f, #2ecc71);
+    border-radius: 2px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .models-section {
+        padding: 60px 0;
+    }
+    
+    .graph-image-container {
+        height: 250px;
+    }
+    
+    .graph-content {
+        padding: 1.5rem;
+    }
+    
+    .graph-title {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero {
+        padding: 100px 0 60px;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .graph-image-container {
+        height: 200px;
+    }
+    
+    .graph-content {
+        padding: 1rem;
+    }
+}
+
+/* Animation delays for staggered effect */
+.graph-card:nth-child(1) { animation-delay: 0.1s; }
+.graph-card:nth-child(2) { animation-delay: 0.2s; }
+.graph-card:nth-child(3) { animation-delay: 0.3s; }
+.graph-card:nth-child(4) { animation-delay: 0.4s; }
+.graph-card:nth-child(5) { animation-delay: 0.5s; }
+.graph-card:nth-child(6) { animation-delay: 0.6s; }
+
+/* Image display fix */
+.graph-image {
+    opacity: 1;
+    visibility: visible;
+    min-width: 200px;
+    min-height: 150px;
+}
+
+/* Ensure images are always visible */
+.graph-image-container img {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #3a8f2f, #2ecc71);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #2ecc71, #27ae60);
+}

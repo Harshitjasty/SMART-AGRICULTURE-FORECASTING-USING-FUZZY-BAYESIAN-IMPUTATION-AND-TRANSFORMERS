@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Prediction Results - FICformer: A Multi-factor Fuzzy Bayesian Imputation Cross-former for Big Data-driven Agricultural Decision Support Systems</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="../static/img/favicon.png" rel="icon">
+  <link href="../static/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Icon Font Stylesheet -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="../static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../static/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../static/vendor/aos/aos.css" rel="stylesheet">
+  <link href="../static/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../static/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="../static/css/main.css" rel="stylesheet">
+  <!-- Results CSS -->
+  <link href="../static/css/results.css" rel="stylesheet">
+
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+
+      <a href="/UserScreen" class="logo d-flex align-items-center me-auto">
+        <h1 style="color: #366730;"><i class="fa fa-seedling me-2"></i> Agri<span style="color:#d9232d;">FIC</span></h1>
+      </a>
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="/UserScreen">User Screen</a></li>
+          <li><a href="/graph" >Data Visualization</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Notebooks</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="../static/FICFormer.html">FICFormer Notebook</a></li>
+              <li><a class="dropdown-item" href="../static/ExtensionFormer.html">Extension Former Notebook</a></li>
+            </ul>
+          </li>
+          <li><a href="/">Logout</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="main">
+    <!-- Results Section -->
+    <section id="results" class="results section">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <div class="results-header text-center">
+              <h2 class="section-title">Crop Growth Prediction Results</h2>
+              <p class="section-subtitle">AI-powered analysis of your agricultural data</p>
+            </div>
+
+            <div class="results-container">
+              <div class="results-summary">
+                <div class="summary-card">
+                  <div class="summary-icon">
+                    <i class="fas fa-chart-line"></i>
+                  </div>
+                  <div class="summary-content">
+                    <h4>Prediction Complete</h4>
+                    <p>Your crop growth analysis has been successfully processed using the FICformer model.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="results-table-container">
+                <h3 class="table-title">Prediction Results</h3>
+                <div class="table-responsive">
+                  <table class="results-table">
+                    <thead>
+                      <tr>
+                        <th>Test Data</th>
+                        <th>Predicted Crop Growth</th>
+                        <th>Confidence</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {% if results %}
+                        {% for result in results %}
+                        <tr>
+                          <td class="test-data">{{ result.test_data }}</td>
+                          <td class="prediction">{{ result.prediction }}</td>
+                          <td class="confidence">
+                            <div class="confidence-bar">
+                              <div class="confidence-fill" data-width="{{ result.confidence }}"></div>
+                            </div>
+                            <span class="confidence-text">{{ result.confidence }}%</span>
+                          </td>
+                        </tr>
+                        {% endfor %}
+                      {% else %}
+                        <tr>
+                          <td colspan="3" class="no-data">No prediction results available</td>
+                        </tr>
+                      {% endif %}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div class="results-actions">
+                <div class="row g-3">
+                  <div class="col-md-4">
+                    <a href="/Predict" class="action-btn primary">
+                      <i class="fas fa-plus"></i>
+                      New Prediction
+                    </a>
+                  </div>
+                  <div class="col-md-4">
+                    <button class="action-btn secondary" onclick="downloadResults()">
+                      <i class="fas fa-download"></i>
+                      Download Results
+                    </button>
+                  </div>
+                  <div class="col-md-4">
+                    <a href="/UserScreen" class="action-btn outline">
+                      <i class="fas fa-tachometer-alt"></i>
+                      Back to Dashboard
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer" class="footer dark-background">
+    <div class="container copyright text-center mt-2">
+      <p>© <span>Copyright</span> <span>All Rights Reserved Designed by <a href="#">AgriFIC</a> Distributed by <a href="#">AgriFIC</span></p>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="../static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../static/vendor/php-email-form/validate.js"></script>
+  <script src="../static/vendor/aos/aos.js"></script>
+  <script src="../static/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="../static/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="../static/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="../static/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="../static/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="../static/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="../static/js/main.js"></script>
+
+  <!-- Results JavaScript -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Set confidence bar widths
+      const confidenceFills = document.querySelectorAll('.confidence-fill');
+      confidenceFills.forEach(fill => {
+        const width = fill.getAttribute('data-width');
+        fill.style.width = width + '%';
+      });
+    });
+    
+    function downloadResults() {
+      // Create CSV content
+      const table = document.querySelector('.results-table');
+      const rows = Array.from(table.querySelectorAll('tr'));
+      const csvContent = rows.map(row => {
+        const cells = Array.from(row.querySelectorAll('th, td'));
+        return cells.map(cell => `"${cell.textContent.trim()}"`).join(',');
+      }).join('\n');
+      
+      // Download CSV
+      const blob = new Blob([csvContent], { type: 'text/csv' });
+      const url = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'crop_growth_predictions.csv';
+      a.click();
+      window.URL.revokeObjectURL(url);
+    }
+  </script>
+
+</body>
+
+</html>
